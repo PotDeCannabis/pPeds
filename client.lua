@@ -7,6 +7,11 @@ Citizen.CreateThread(function()
 	end
 end)
 
+-- Variables
+
+local ClientPlayer, ServerPlayer, IsSpawned = PlayerId(), GetPlayerServerId(PlayerId()), true
+
+
 -- Vérifications
 
 AddEventHandler("playerSpawned", function()
@@ -21,11 +26,7 @@ AddEventHandler("playerSpawned", function()
 			end
 	    end
 	end
- end)
-
--- Variables
-
-local ClientPlayer, ServerPlayer, IsSpawned = PlayerId(), GetPlayerServerId(PlayerId()), true
+end)
 
 -- TriggerClientEvent
 
