@@ -36,17 +36,13 @@ RegisterCommand("deleteped", function(source, args)
 			["@ped"] = "none",
 			["@steamid"] = FindIdentifier(id)
 			})
-			exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a reset **" ..GetPlayerName(id).. "** en personnage fivem.", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
 		else
 			TriggerClientEvent("pPeds:deletePed", source)
 			MySQL.Async.execute("UPDATE users SET ped = @ped WHERE identifier = @steamid", {
 			["@ped"] = "none",
 			["@steamid"] = FindIdentifier(source)
 			})
-			exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a reset **" ..GetPlayerName(source).. "** en personnage fivem.", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
 		end
-	else
-		exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a reset **" ..GetPlayerName(id).. "** en personnage fivem.", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
 	end
 end)
 
@@ -64,17 +60,7 @@ RegisterCommand("setped", function(source, args)
 	       		["@steamid"] = FindIdentifier(id),
         		["@ped"] = ped,
 	    		})
-	    		exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a set **" ..GetPlayerName(id).. "** en ped (*" ..ped.. ")*", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
 			end
-		end
-	else
-		if id ~= nil and Player ~= nil then
-			if ped ~= nil then
-				exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a set **" ..GetPlayerName(id).. "** en ped (*" ..ped.. ")*", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
-			else
-				exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a set **" ..GetPlayerName(id).. "** en ped (*" ..ped.. ")*", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")			end
-		else
-			exports["cLogs"]:sendLogsToDiscord("Peds", "**" ..GetPlayerName(source).. "** a set **" ..GetPlayerName(id).. "** en ped (*" ..ped.. ")*", "https://discord.com/api/webhooks/1035683270966378566/BgF9GAHeiWjLPQUsZAP47ogbhw2VcRO7UpKFRuonCbQc_kw4IxT2ZP57zFnyVdXpvtIf")
 		end
 	end
 end)
